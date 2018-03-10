@@ -3,11 +3,12 @@ workspace:
   path: src/github.com/cicd-hackathon-stgt/droneio
 
 
+pipeline: 
   buildGo: 
     image: golang 
     commands: 
       - go build . 
-      
+
   buildDocker:
     image: docker
     commands:
