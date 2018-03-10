@@ -30,6 +30,6 @@ pipeline:
   cleanup:
     image: docker
     commands:
-      - docker rmi cicd-hackathon-stgt/droneio:latest
+      - docker rmi --force cicd-hackathon-stgt/droneio:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
