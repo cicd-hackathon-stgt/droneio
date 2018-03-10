@@ -2,13 +2,10 @@ workspace:
   base: /go
   path: src/github.com/cicd-hackathon-stgt/droneio
 
-pipeline:
-  build: 
-    image: golang
-    commands: 
-      - go build . 
-    
-  docker:
-    image: plugins/docker
-    repo: zanetworker/droneio
-    tags: [ 'latest' ]
+  buildDocker:
+    image: docker
+    commands:
+      - docker build --rm -t zanetworker/hello-world .
+      - docker run --rm octocat/hello-world --test
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
