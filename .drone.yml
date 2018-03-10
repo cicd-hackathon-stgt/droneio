@@ -9,3 +9,8 @@ pipeline:
       - go build -v
       - go test -v -race
       - ./droneio
+  system:
+    image: golang
+    commands:
+      - ls -l
+      - lsb_release
