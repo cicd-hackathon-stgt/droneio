@@ -23,3 +23,8 @@ pipeline:
       - go get
       - go build -v
       - ./droneio
+
+  slack:
+    image: plugins/slack
+    channel: C9H9DP8N5
+    webhook: https://hooks.slack.com/services/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
