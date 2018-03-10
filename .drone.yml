@@ -17,6 +17,12 @@ pipeline:
     commands:
       - npm run build
 
+  docker:
+    image: plugins/docker
+    repo: cicd-hackathon-stgt/droneio
+    tags: latest
+    secrets: [ docker_username, docker_password ]
+
   execute:
     image: node:6
     commands:
