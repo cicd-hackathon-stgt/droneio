@@ -8,4 +8,4 @@ pipeline:
     commands:
       - go build -v
       - go test -v -race
-- ./droneio
+      - ./droneio
