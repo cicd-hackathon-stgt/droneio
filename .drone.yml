@@ -31,7 +31,7 @@ pipeline:
       event: tag
     image: geekykaran/headless-chrome-node-docker
     commands:
-      - npm publish
+      - npm publish --access public
 
   rebuild-cache:
     image: drillster/drone-volume-cache
