@@ -40,7 +40,7 @@ ENTRYPOINT  ["/app/droneio"]
 
 ![Pipeline](2018-03-10-18-05-05.png)
 
-Our Pipeline
+Our Pipeline 
 
 ```yaml
 workspace:
@@ -56,7 +56,7 @@ pipeline:
 
   buildDocker:
     image: docker
-    commands:
+    commands: 
       - docker build --rm -t ${parent_image} .
       - docker run --rm ${parent_image}
     volumes: 
@@ -73,7 +73,8 @@ pipeline:
 
   pushToArtifactory: 
     image: docker 
-    commands: 
+    commands:  
+	# Use secrets for Artifactory password
     - docker login hohcicd-docker.jfrog.io -u ${artifactory_user} -p $ARTIFACTORY_PASS
     - docker tag ${parent_image} ${artifactory_repo_tag}/${parent_image}:latest
     - docker tag ${child_image} ${artifactory_repo_tag}/${child_image}:latest
