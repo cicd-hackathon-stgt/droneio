@@ -21,7 +21,7 @@ pipeline:
     image: docker
     commands:
       - docker build -f Dockerfile --rm -t zanetworker/child-drone.
-      - docker run --rm zanetworker/child-drone --test
+      - docker run --rm zanetworker/child-drone 
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock 
 
