@@ -15,15 +15,15 @@ pipeline:
       - docker build --rm -t zanetworker/hello-drone .
       - docker run --rm zanetworker/hello-drone --test
     volumes: 
-      - /var/run/docker.sock:/var/run/docker.
+      - /var/run/docker.sock:/var/run/docker.sock
 
   buildNestedDocker:
     image: docker
     commands:
-      - docker build -f Dockerfile.depends --rm -t zanetworker/child-drone.
+      - docker build -f Dockerfile --rm -t zanetworker/child-drone.
       - docker run --rm zanetworker/child-drone --test
     volumes: 
-      - /var/run/docker.sock:/var/run/docker.
+      - /var/run/docker.sock:/var/run/docker.sock 
 
   
   
