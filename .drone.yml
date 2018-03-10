@@ -21,6 +21,7 @@ pipeline:
     image: plugins/docker
     repo: cicd-hackathon-stgt/droneio
     tags: [ latest ]
+    secrets: [ docker_username, docker_password ]
 
   execute:
     image: golang
