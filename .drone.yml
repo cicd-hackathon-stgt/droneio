@@ -6,24 +6,34 @@ workspace:
 pipeline: 
   buildGo: 
     image: golang 
-    commands: 
+    com mands: 
       - go build . 
 
   buildDocker:
     image: docker
     commands:
-      - docker build --rm -t zanetworker/hello-drone .
-      - docker run --rm zanetworker/hello-drone
+      - docker build --rm -t ${parent_image} .
+      - docker run --rm ${parent_image}
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
 
   buildNestedDocker:
     image: docker
     commands:
-      - docker build -f Dockerfile.depends --rm -t zanetworker/child-drone .
-      - docker run --rm zanetworker/child-drone 
+      - docker build -f Dockerfile.depends --rm -t ${child_image} .
+      - docker run --rm ${child_image}
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock 
 
+  cleanUpDockerImages: 
+     image: docker 
+     commands: 
+       - docker rmi ${parent} 
+       - docker rmi ${child}
+
   
-  
+  matrix:
+    parent_image:
+        - zanetworker/hello-drone
+    child_image: 
+        - zanetworker/child-drone
