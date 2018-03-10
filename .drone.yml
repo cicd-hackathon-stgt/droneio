@@ -25,6 +25,16 @@ pipeline:
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock 
 
+
+  pushToArtifactory: 
+    image: docker 
+    commands: 
+    - docker login hohcicd-docker.jfrog.io -u ${artifactory_user} -p ${artifactory_pass}
+    - docker tag ${parent_image} ${artifactory_repo_tag}/${parent_image}:latest
+    - docker tag ${child_image} ${artifactory_repo_tag}/${child_image}:latest
+    - docker push ${artifactory_repo_tag}/${parent_image}:latest
+    - docker push ${artifactory_repo_tag}/${child_image}:latest
+
   cleanUpDockerImages: 
      image: docker 
      commands: 
@@ -39,3 +49,10 @@ matrix:
    - zanetworker/hello-drone
   child_image: 
    - zanetworker/child-drone
+  artifactory_repo_tag: 
+   - hohcicd-docker.jfrog.io
+  artifactory_user: 
+   - droneio
+  artifactory_pass: 
+   - droneior0cks
+ 
