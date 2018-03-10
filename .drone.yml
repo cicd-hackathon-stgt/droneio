@@ -7,5 +7,5 @@ pipeline:
     image: golang
     commands:
       - go build -v
-      - go test -v race
+      - go test -v --race
       - ./droneio
