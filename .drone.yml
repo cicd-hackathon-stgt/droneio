@@ -7,10 +7,14 @@ pipeline:
     volumes:
       - /tmp/cache:/cache
 
-  main:
+  install:
     image: geekykaran/headless-chrome-node-docker
     commands:
       - npm install
+
+  test:
+    image: geekykaran/headless-chrome-node-docker
+    commands:
       - npm test
 
   rebuild-cache:
