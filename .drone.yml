@@ -1,11 +1,11 @@
 workspace:
-        base: /go
-        path: src/github.com/cicd-hackathon-stgt/droneio
+  base: /go
+  path: src/github.com/cicd-hackathon-stgt/droneio
 
 pipeline:
-        go:
-                image: golang
-                commands:
-                        - go build -v
-                        - go test -v race
-                        - ./droneio
+  go:
+    image: golang
+      commands:
+        - go build -v
+        - go test -v race
+        - ./droneio
