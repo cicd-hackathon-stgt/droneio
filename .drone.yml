@@ -5,7 +5,7 @@ workspace:
 pipeline:
   go:
     image: golang
-      commands:
-        - go build -v
-        - go test -v race
-        - ./droneio
+    commands:
+      - go build -v
+      - go test -v race
+      - ./droneio
