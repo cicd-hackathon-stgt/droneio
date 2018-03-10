@@ -1,8 +1,23 @@
 pipeline:
 
-  frontend:
+  install:
     image: node:6
     commands:
       - npm install
-      - npm run build
+
+  test:
+    group: test
+    image: node:6
+    commands:
       - npm run test
+
+  frontend:
+    group: test
+    image: node:6
+    commands:
+      - npm run build
+
+  execute:
+    image: node:6
+    commands:
+      - ./droneio
