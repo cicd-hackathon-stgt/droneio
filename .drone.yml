@@ -1,0 +1,7 @@
+pipeline:
+  main:
+    image: node:6
+    commands:
+      - npm install
+      - npm start
+
