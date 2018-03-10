@@ -1,9 +1,10 @@
+<scheme>://http://18.197.25.150//api/badges/zanetworker/cicd-hackathon-stgt/droneio/status.svg?branch=zanetworker
+
 # Build and Push Docker images to artifactory
 
 This usecase describes how to build parent docker images with Drone, use the parent images in Child images and push theese images to artifactory.
 
-
-# Pipeline steps 
+# Pipeline steps
 
 
 ## Our Application
