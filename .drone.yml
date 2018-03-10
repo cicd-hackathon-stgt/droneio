@@ -28,8 +28,8 @@ pipeline:
   cleanUpDockerImages: 
      image: docker 
      commands: 
-       - docker rmi ${parent} 
-       - docker rmi ${child}
+       - docker rmi ${parent_image} 
+       - docker rmi ${child_image}
 
   
   matrix:
