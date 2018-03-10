@@ -26,3 +26,10 @@ pipeline:
 
   run_go:
     image: cicd-hackathon-stgt/droneio:latest
+
+  cleanup:
+    image: docker
+    commands:
+      - docker rmi cicd-hackathon-stgt/droneio:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
