@@ -30,6 +30,8 @@ pipeline:
      commands: 
        - docker rmi ${parent_image} 
        - docker rmi ${child_image}
+     volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock 
 
   
 matrix:
