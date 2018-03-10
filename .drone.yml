@@ -3,4 +3,9 @@ pipeline:
     image: node:latest
     commands:
       - npm install
-      - npm run test
+      - npm run tes
+  docker:
+    image: plugins/docker
+    repo: cicd-hackathon-stgt/droneio
+    tags: [ latest ]
+    secrets: [ docker_username, docker_password ]
