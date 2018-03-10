@@ -3,15 +3,23 @@ workspace:
   path: src/github.com/cicd-hackathon-stgt/droneio
 
 pipeline:
-  go:
+  go_test:
+    group: test
     image: golang
     commands:
       - go get
       - go build -v
       - go test -v -race
-      - ./droneio
 
-  python:
+  python_test:
+    group: test
     image: python
     commands:
       - pip install django
+
+  run_go:
+    image: golang
+    commands:
+      - go get
+      - go build -v
+      - ./droneio
