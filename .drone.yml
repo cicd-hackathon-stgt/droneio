@@ -26,5 +26,3 @@ pipeline:
 
   run_go:
     image: cicd-hackathon-stgt/droneio:latest
-    commands:
-      - ./droneio
