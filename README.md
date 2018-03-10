@@ -1,5 +1,5 @@
 
-<scheme>://18.197.25.150//api/badges/zanetworker/cicd-hackathon-stgt/droneio/status.svg?branch=zanetworker
+http://18.197.25.150//api/badges/zanetworker/cicd-hackathon-stgt/droneio/status.svg?branch=zanetworker
 
 # Build and Push Docker images to artifactory
 
