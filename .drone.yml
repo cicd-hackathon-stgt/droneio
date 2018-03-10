@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/github.com/cicd-hackathon-stgt/droneio/funkvn
+  path: src/github.com/cicd-hackathon-stgt/droneio/
 
 pipeline:
   go:
