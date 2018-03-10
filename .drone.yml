@@ -1,6 +1,6 @@
 pipeline:
   main:
-    image: selenium/node-chrome
+    image: geekykaran/headless-chrome-node-docker
     commands:
       - npm install
       - npm test
