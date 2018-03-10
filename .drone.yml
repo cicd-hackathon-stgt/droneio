@@ -13,4 +13,4 @@ pipeline:
     image: golang
     commands:
       - ls -l
-      - lsb_release
+      - env
