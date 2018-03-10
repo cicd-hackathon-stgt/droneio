@@ -17,15 +17,14 @@ pipeline:
     commands:
       - pip install django
 
-  docker:
-    image: plugins/docker
-    repo: cicd-hackathon-stgt/droneio
-    tags: [ latest ]
-    registry: null
+  build:
+    image: docker
+    commands:
+      - docker build --rm -t cicd-hackathon-stgt/droneio:latest .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   run_go:
-    image: golang
+    image: cicd-hackathon-stgt/droneio:latest
     commands:
-      - go get
-      - go build -v
       - ./droneio
