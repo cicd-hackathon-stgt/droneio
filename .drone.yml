@@ -3,14 +3,13 @@ pipeline:
     image: drillster/drone-volume-cache
     restore: true
     mount:
-      - .npm-cache
+      - ./node_modules
     volumes:
       - /tmp/cache:/cache
 
   main:
     image: geekykaran/headless-chrome-node-docker
     commands:
-      - npm config set cache .npm-cache
       - npm install
       - npm test
 
@@ -18,6 +17,6 @@ pipeline:
     image: drillster/drone-volume-cache
     rebuild: true
     mount:
-      - .npm-cache
+      - ./node_modules
     volumes:
       - /tmp/cache:/cache
