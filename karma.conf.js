@@ -11,6 +11,12 @@ module.exports = function (config) {
     },
     reporters: ["progress", "karma-typescript"],
     browsers: ["Chrome"],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     karmaTypescriptConfig: {
       compilerOptions: {
         baseUrl: ".",

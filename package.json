@@ -4,7 +4,7 @@
   "description": "Example project",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "karma start --single-run --browsers ChromeHeadless --no-sandbox",
+    "test": "karma start --single-run --browsers ChromeHeadlessNoSandbox",
     "karma": "karma start"
   },
   "repository": {
