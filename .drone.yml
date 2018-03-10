@@ -17,6 +17,22 @@ pipeline:
     commands:
       - npm test
 
+  build:
+    image: geekykaran/headless-chrome-node-docker
+    commands:
+      - npm run build
+
+  npm_auth:
+    image: robertstettner/drone-npm-auth
+    secrets: [ npm_username, npm_password, npm_email ]
+
+  publish:
+    when:
+      event: tag
+    image: geekykaran/headless-chrome-node-docker
+    commands:
+      - npm publish
+
   rebuild-cache:
     image: drillster/drone-volume-cache
     rebuild: true

@@ -1,11 +1,13 @@
 {
-  "name": "droneio",
+  "name": "@droneiotest/droneio-test",
   "version": "1.0.0",
   "description": "Example project",
   "scripts": {
     "start": "ts-node src/index.ts",
     "test": "karma start --single-run --browsers ChromeHeadlessNoSandbox",
-    "karma": "karma start"
+    "karma": "karma start",
+    "build": "tsc",
+    "minor": "npm version minor"
   },
   "repository": {
     "type": "git",
