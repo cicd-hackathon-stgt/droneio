@@ -17,11 +17,11 @@ pipeline:
     commands:
       - npm run build
 
-  docker:
-    image: plugins/docker
-    repo: cicd-hackathon-stgt/droneio
-    tags: latest
-    secrets: [ konstantinsteinmiller, 123456789 ]
+#  docker:
+#    image: plugins/docker
+#    repo: cicd-hackathon-stgt/droneio
+#    tags: latest
+#    secrets: [ konstantinsteinmiller, 123456789 ]
 
   execute:
     image: node:6
