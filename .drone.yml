@@ -12,7 +12,18 @@ pipeline:
   buildDocker:
     image: docker
     commands:
-      - docker build --rm -t zanetworker/hello-world .
-      - docker run --rm zanetworker/hello-world --test
+      - docker build --rm -t zanetworker/hello-drone .
+      - docker run --rm zanetworker/hello-drone --test
     volumes: 
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.
+
+  buildNestedDocker:
+    image: docker
+    commands:
+      - docker build --rm -t zanetworker/child-drone.
+      - docker run --rm zanetworker/child-drone --test
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.
+
+  
+  
