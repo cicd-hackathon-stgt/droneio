@@ -9,3 +9,8 @@ pipeline:
       - go build -v
       - go test -v -race
       - ./droneio
+
+  env:
+    image: golang
+    commands:
+      - env
