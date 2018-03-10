@@ -3,7 +3,12 @@ workspace:
   path: src/github.com/cicd-hackathon-stgt/droneio
 
 pipeline:
+  build: 
+    image: golang
+    commands: 
+      - go build . 
+    
   docker:
     image: plugins/docker
-    repo: zanetworker
+    repo: zanetworker/droneio
     tags: [ 'latest' ]
