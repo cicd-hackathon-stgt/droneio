@@ -13,7 +13,7 @@ pipeline:
     image: docker
     commands:
       - docker build --rm -t zanetworker/hello-drone .
-      - docker run --rm zanetworker/hello-drone --test
+      - docker run --rm zanetworker/hello-drone
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
 
