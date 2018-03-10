@@ -13,6 +13,6 @@ pipeline:
     image: docker
     commands:
       - docker build --rm -t zanetworker/hello-world .
-      - docker run --rm octocat/hello-world --test
+      - docker run --rm zanetworker/hello-world --test
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
