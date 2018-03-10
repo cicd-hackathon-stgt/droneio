@@ -3,27 +3,50 @@ workspace:
   path: src/github.com/cicd-hackathon-stgt/droneio
 
 pipeline:
-  test:
-    group: go
-    image: golang:1.10
-    commands:
-      - sleep 10
-      - go test -v -race
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache:/cache
 
   build:
-    group: go
-    image: golang:1.10
+    image: node
     commands:
-      - sleep 10
-      - go build -v
+      - du -sh ./node_modules/
+      - npm install
+      - du -sh ./node_modules/
 
-  docker:
-    image: plugins/docker
-    repo: cicd-hackathon-stgt/droneio
-    tags: [ latest ]
-    secrets: [ docker_username, docker_password ]
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache:/cache
 
-  execute:
-    image: golang
-    commands:
-      - ./droneio
+  # test:
+  #   group: go
+  #   image: golang:1.10
+  #   commands:
+  #     - sleep 10
+  #     - go test -v -race
+  #
+  # build:
+  #   group: go
+  #   image: golang:1.10
+  #   commands:
+  #     - sleep 10
+  #     - go build -v
+  #
+  # docker:
+  #   image: plugins/docker
+  #   repo: cicd-hackathon-stgt/droneio
+  #   tags: [ latest ]
+  #   secrets: [ docker_username, docker_password ]
+  #
+  # execute:
+  #   image: golang
+  #   commands:
+  #     - ./droneio

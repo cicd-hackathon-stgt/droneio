@@ -1,0 +1,22 @@
+{
+  "name": "droneio",
+  "version": "1.0.0",
+  "description": "This is my own user branch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cicd-hackathon-stgt/droneio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cicd-hackathon-stgt/droneio/issues"
+  },
+  "homepage": "https://github.com/cicd-hackathon-stgt/droneio#readme",
+  "dependencies": {
+    "automerge": "^0.7.1"
+  }
+}
