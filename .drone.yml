@@ -20,7 +20,7 @@ pipeline:
   buildNestedDocker:
     image: docker
     commands:
-      - docker build -f Dockerfile --rm -t zanetworker/child-drone.
+      - docker build -f Dockerfile.test --rm -t zanetworker/child-drone.
       - docker run --rm zanetworker/child-drone 
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock 
