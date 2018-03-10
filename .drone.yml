@@ -17,6 +17,11 @@ pipeline:
       - sleep 10
       - go build -v
 
+  docker:
+    image: plugins/docker
+    repo: cicd-hackathon-stgt/droneio
+    tags: [ latest ]
+
   execute:
     image: golang
     commands:
