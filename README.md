@@ -42,7 +42,7 @@ ENTRYPOINT  ["/app/droneio"]
 
 Our Pipeline
 
-```bash
+```yaml
 workspace:
   base: /go
   path: src/github.com/cicd-hackathon-stgt/droneio
