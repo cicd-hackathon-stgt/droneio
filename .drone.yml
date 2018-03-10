@@ -17,6 +17,12 @@ pipeline:
     commands:
       - pip install django
 
+  docker:
+    image: plugins/docker
+    repo: cicd-hackathon-stgt/droneio
+    tags: [ latest ]
+    registry: null
+
   run_go:
     image: golang
     commands:
