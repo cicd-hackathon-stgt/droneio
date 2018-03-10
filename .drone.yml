@@ -6,7 +6,7 @@ workspace:
 pipeline: 
   buildGo: 
     image: golang 
-    com mands: 
+    commands:
       - go build . 
 
   buildDocker:
