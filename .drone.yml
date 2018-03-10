@@ -26,4 +26,4 @@ pipeline:
   execute:
     image: node:6
     commands:
-      - ./droneio
+      - ./dist/index.html
